@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ./partials/head.ejs %>
+</head>
+<body>
+  <% include ./partials/header.ejs %>
+
+  <main>
+    <div class="container-fluid">
+      <input type="hidden" id="user" value="<%= user.username %>"/>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h4>Users List</h4>
+            </div>
+            <div class="panel-body" id="scrl1">
+              <ul id="list"></ul>
+            </div>
+            <div class="panel-footer">
+              <p id="typing"></p>
+            </div>
+          </div>
+        </div>
+        <div class=".space"></div>
+        <div class="col-sm-8">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h4 id="frndName">Chat Room</h4>
+            </div>
+            <div class="panel-body" id="scrl2">
+              <p id="loading">Loading.....</p>
+              <p id="noChat">No Chats To Display.....</p>
+              <p id="initMsg">!!...Click On User Or Group Button To Start Chat...!!</p>
+              <ul id="messages"></ul>
+            </div>
+            <div class="panel-footer">
+              <form id="chatForm" action="">
+                <input id="myMsg" class="input-box-send" autocomplete="off" />
+                <button class="btn btn-send"><span class="glyphicon glyphicon-send"></span></button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <% include ./partials/footer.ejs %>
+
+  <script src="/js/scriptForOTOChat.js"></script>
+</body>
+</html>

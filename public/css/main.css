@@ -1,0 +1,268 @@
+/*styling body tag*/
+body{
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  align-items: center;
+}
+
+/*styling for main tag*/
+main{
+  margin: 10px 0 10px 0;
+}
+
+/*styling for footer*/
+footer{
+  margin: 20px 0 20px 0;
+}
+
+/*styling Login screen.*/
+.login-screen{
+  background-color: #cccccc;
+}
+
+.login-box{
+  margin: auto;
+  margin-top: 10%;
+  width: 50%;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.login-form,
+.signup-form{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.user-details-box{
+  margin: auto;
+  margin-top: 20px;
+  width: 50%;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  background-color: rgba(204, 204, 204, 0.5);
+}
+
+.input-block{
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.input-block p{
+  text-align: left;
+}
+
+.input-icon{
+  position: relative;
+  font-size: 17px;
+  height: auto;
+  padding: 10px;
+  color: #8b9199;
+  background-color: #ffffff;
+}
+
+.input-box{
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  width: 75%;
+  border: 0;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.btn-block{
+  width: 75%;
+  margin: auto;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 20px;
+  background-color: #007aff;
+  border: 2px solid;
+  border-color: #087aff;
+}
+
+.btn-block:hover,
+.btn-block:focus,
+.btn-block:active{
+  color: #007aff;
+  background-color: transparent;
+  border-color: #007aff;
+}
+
+/*styling home.*/
+.space{
+  width: 100%;
+  height: 20px;
+}
+
+.btn-default{
+  border: 2px solid #000000;
+  border-radius: 0;
+  color: #000000;
+  font-size: 16px;
+}
+.top-margin{
+  display: inline;
+}
+
+.top-space,
+.top-margin a,
+.top-margin a{
+  margin: 5px;
+  padding: 8px 25px 8px 25px;
+}
+
+.panel{
+  box-shadow: 0 0 10px #000000;
+}
+
+/*styling for single-product page*/
+.line{
+  width:80%;
+  margin: auto;
+  height:1px;
+  background-color: #000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.linefull{
+  width:100%;
+  margin: auto;
+  height:1px;
+  background-color: #cccccc;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/*styling of chat panel body*/
+#scrl1,
+#scrl2{
+  height: 400px;
+  overflow-y: auto;
+}
+
+#loading,
+#noChat,
+#chatForm{
+  display: none;
+}
+
+.input-box-send{
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  width: 75%;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.btn-send{
+  margin: auto;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 20px;
+  background-color: #007aff;
+  border: 2px solid;
+  border-color: #087aff;
+}
+
+.btn-send:hover,
+.btn-send:focus,
+.btn-send:active{
+  color: #007aff;
+  background-color: transparent;
+  border-color: #007aff;
+}
+
+.btn-user{
+  width: 50%;
+  margin: auto;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 16px;
+  background-color: #66b0ff;
+  border: 1px solid;
+  border-color: #087aff;
+}
+
+.btn-user:hover,
+.btn-user:focus,
+.btn-user:active{
+  color: #007aff;
+  background-color: transparent;
+  border-color: #007aff;
+}
+
+#messages,
+#list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 50px;
+}
+#messages li,
+#list li{
+  text-align: left;
+  width: auto;
+  background: #eee;
+  padding: 5px 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+/*styling for error id tag*/
+#error1,
+#error2{
+  color: #e60000;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#irf,
+#ik,#ik1,#ik2,
+#ir,#ir1,#ir2{
+  display: none;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+#ik,#ik1,#ik2{color: #009900;}
+#ir,#ir1,#ir2{color: #e60000;}
+
+/*meadia query for responsive page*/
+@media screen and (max-width: 1280px){
+
+}
+@media screen and (max-width: 1080px){
+
+}
+@media screen and (max-width: 960px){
+
+}
+@media screen and (max-width: 840px){
+
+}
+@media screen and (max-width: 720px){
+
+}
+@media screen and (max-width: 600px){
+
+}
+@media screen and (max-width: 480px){
+
+}
+@media screen and (max-width: 360px){
+
+}
+@media screen and (max-width: 240px){
+
+}

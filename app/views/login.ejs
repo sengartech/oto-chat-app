@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ./partials/head.ejs %>
+</head>
+<body class="login-screen">
+  <% include ./partials/header.ejs %>
+  <main>
+    <div class="login-box">
+      <h2>User Login</h2><br>
+      <form class="login-form" action="/user/api/v1/login" method="post">
+        <div class="input-block">
+          <span class="input-icon"><i class="glyphicon glyphicon-user"></i></span>
+          <input class="input-box" type="email" name="email" placeholder="Email" autofocus required/>
+        </div>
+        <div class="input-block">
+          <span class="input-icon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input class="input-box" type="password" name="password" placeholder="Password" required/>
+        </div><br>
+        <button class="btn btn-primary btn-block" type="submit" name="submit">Login</button><br>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

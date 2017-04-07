@@ -1,12 +1,12 @@
 # Project Title
 
-Chat App Using Socket.io.
+One-To-One Chat App Using Socket.io.
 
 ## Description
 
 This is One-To-One as well as Group Chat Application.
 Based on MVC Design Pattern.
-Implemented in NodeJs, Express, MongoDB as Backend. 
+Implemented in NodeJs, Express, MongoDB as Backend.
 HTML5, Javascript, CSS as frontend.
 
 ## Prerequisites

@@ -141,7 +141,7 @@ $ (function(){
 
   }); // end of listening old-chats event.
 
-  // key press handler.
+  // keyup handler.
   $('#myMsg').keyup(function(){
     if($('#myMsg').val()){
       $('#sendBtn').show(); //showing send button.
@@ -150,12 +150,20 @@ $ (function(){
     else{
       $('#sendBtn').hide(); //hiding send button to prevent sending empty messages.
     }
-  });
+  }); //end of keyup handler.
 
   //receiving typing message.
   socket.on('typing',function(msg){
-      $('#typing').text(msg);
-  });
+    var setTime;
+    //clearing previous setTimeout function.
+    clearTimeout(setTime);
+    //showing typing message.
+    $('#typing').text(msg);
+    //showing typing message only for few seconds.
+    setTime = setTimeout(function(){
+      $('#typing').text("");
+    },2000);
+  }); //end of typing event.
 
   //sending message.
   $('form').submit(function(){

@@ -1,20 +1,23 @@
 //including dependencies.
 var express = require('express');
-var mongoose = require('mongoose');
-var events = require('events');
-
-var eventEmitter = new events.EventEmitter();
 
 var auth = require('../../middlewares/auth.js');
-var encrypt = require('../../libs/encrypt.js');
 
 var router = express.Router();
 
-//defining model.
-var userModel = mongoose.model('User');
-
 //defining controller function.
 module.exports.controller = function(app){
+
+  //router for chat window.
+  app.get('/chat',auth.checkLogin,function(req,res){
+
+    res.render('chat',
+                {
+                  title:"Chat Home",
+                  user:req.session.user,
+                  chat:req.session.chat
+                });
+  });
 
   app.use(router);
 

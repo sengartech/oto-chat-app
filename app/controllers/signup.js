@@ -15,6 +15,7 @@ var userModel = mongoose.model('User');
 //defining controller function.
 module.exports.controller = function(app){
 
+  //to show signup page.
   router.get("/signup",auth.loggedIn,function(req,res){
     res.render('signup',
                 {

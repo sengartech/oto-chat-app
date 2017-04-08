@@ -1,7 +1,7 @@
 //code for socket chats.
 $ (function(){
 
-  var socket = io();
+  var socket = io('/chat');
   // console.log("socket is :"+socket);
 
   var username = $('#user').val();
@@ -15,11 +15,6 @@ $ (function(){
   socket.on('connect',function(){
     socket.emit('set-user-data',username);
   });//end of connect event.
-
-  // //passing data on reconnection.
-  // socket.on('reconnect',function(){
-  //   socket.emit('reconnection');
-  // });//end of reconnect event.
 
   //receiving onlineStack.
   socket.on('onlineStack',function(stack){
@@ -62,13 +57,12 @@ $ (function(){
 
     //assigning friends name to whom messages will send,(in case of group its value is Group).
     toUser = $(this).text();
-    console.log("btn clicked..");
-    console.log(toUser);
 
     //showing and hiding relevant information.
     $('#frndName').text(toUser);
     $('#initMsg').hide();
-    $('#chatForm').show();
+    $('#chatForm').show(); //showing chat form.
+    $('#sendBtn').hide(); //hiding send button to prevent sending of empty messages.
 
     //assigning two names for room. which helps in one-to-one and also group chat.
     if(toUser == "Group"){
@@ -79,18 +73,11 @@ $ (function(){
       var currentRoom = username+"-"+toUser;
       var reverseRoom = toUser+"-"+username;
     }
-    console.log(currentRoom);
-    console.log(reverseRoom);
 
     //event to set room and join.
     socket.emit('set-room',{name1:currentRoom,name2:reverseRoom});
 
-    console.log("came");
-    console.log(msgCount);
-
-    // socket.emit('old-chats',{username:username,msgCount:msgCount});
-
-  });
+  }); //end of on button click event.
 
   //event for setting roomId.
   socket.on('set-room',function(room){
@@ -105,14 +92,13 @@ $ (function(){
     console.log("roomId : "+roomId);
     //event to get chat history on button click or as room is set.
     socket.emit('old-chats-init',{room:roomId,username:username,msgCount:msgCount});
-  });
+
+  }); //end of set-room event.
 
   //on scroll load more old-chats.
   $('#scrl2').scroll(function(){
-    console.log("on scroll");
 
     if($('#scrl2').scrollTop() == 0 && noChat == 0 && oldInitDone == 1){
-      console.log("scroll true");
       $('#loading').show();
       socket.emit('old-chats',{room:roomId,username:username,msgCount:msgCount});
     }
@@ -134,7 +120,6 @@ $ (function(){
           var txt3 = $('<p></p>').append(txt1,txt2);
           var txt4 = $('<p></p>').text(data.result[i].msg).css({"color":"#000000"});
           //showing chat in chat box.
-          console.log("msg.");
           $('#messages').prepend($('<li>').append(txt3,txt4));
           msgCount++;
 
@@ -157,8 +142,14 @@ $ (function(){
   }); // end of listening old-chats event.
 
   // key press handler.
-  $('#myMsg').keypress(function(){
-    socket.emit('typing');
+  $('#myMsg').keyup(function(){
+    if($('#myMsg').val()){
+      $('#sendBtn').show(); //showing send button.
+      socket.emit('typing');
+    }
+    else{
+      $('#sendBtn').hide(); //hiding send button to prevent sending empty messages.
+    }
   });
 
   //receiving typing message.
@@ -170,6 +161,7 @@ $ (function(){
   $('form').submit(function(){
     socket.emit('chat-msg',{msg:$('#myMsg').val(),msgTo:toUser,date:Date.now()});
     $('#myMsg').val("");
+    $('#sendBtn').hide();
     return false;
   }); //end of sending message.
 

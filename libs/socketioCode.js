@@ -143,7 +143,7 @@ module.exports.sockets = function(http){
       }
       else{
         console.log("Chat Saved.");
-        console.log(result);
+        //console.log(result);
       }
     });
 

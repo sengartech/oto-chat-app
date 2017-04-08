@@ -1,4 +1,4 @@
-Chat App Using Socket.io.
+One-To-One Chat App Using Socket.io.
 
 GitHub Link : https://github.com/sengartech/oto-chat-app.git
 

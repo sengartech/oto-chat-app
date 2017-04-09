@@ -1,0 +1,2 @@
+# ignoring node_modules folder and files inside it.
+node_modules

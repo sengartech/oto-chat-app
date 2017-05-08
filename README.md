@@ -2,7 +2,7 @@
 
 One-To-One Chat App Using Socket.io.
 
-Project is live at : [https://www.webchat.technophor.com] (https://www.webchat.technophor.com).
+Project is live at : [https://www.webchat.technophor.com](https://www.webchat.technophor.com).
 
 ## Description
 
